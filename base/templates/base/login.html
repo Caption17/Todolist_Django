@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>ĐĂNG NHẬP</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <label style="color: #fff;" for="">Tên tài khoản{{ form.usernam.lable}}</label>
+        {{form.username}}
+        <label style="color: #fff;" for="">Mật khẩu{{ form.password.lable}}</label>
+        {{form.password}}
+        <input class="button" type="submit" value="Đăng nhập" style="margin-top: 100px;">
+    </form>
+    <p style="color: #fff;">Bạn chưa có tài khoản? <a href="{% url 'register' %}"><span style="color:#EB796F"">Tạo tài khoản</span></a></p>
+</div>
+{% endblock content %}

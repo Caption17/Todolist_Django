@@ -1,0 +1,22 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <h1>ĐĂNG KÝ</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label style="color: #fff;" for="">Tên tài khoản{{ form.usernam.lable}}</label>
+        {{form.username}}
+        <!-- {{form.as_p}} -->
+        <label style="color: #fff;" for="">Mật khẩu{{ form.password1.lable}}</label>
+        {{form.password1}}
+        <label style="color: #fff;" for="">Nhập lại mật khẩu{{ form.password2.lable}}</label>
+        {{form.password2}}
+        <input class="button" type="submit" value="Đăng ký" style="margin-top: 100px;">
+    </form>
+    
+    <p style="color: #fff;">Bạn đã có tài khoản? <a href="{% url 'login'%}"><span style="color:#EB796F">Đăng nhập</span></a></p>
+</div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'tasks' %}" class="logout">&#8592; Trở lại</a>
+</div>
+
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <p style="color: #fff;"; font-size="17px">Bạn có chắc muốn xóa việc này không? "{{task}}"</p>
+        <input class="button" type="submit" value="Xóa">
+    </form>
+</div>
+
+{% endblock content %}

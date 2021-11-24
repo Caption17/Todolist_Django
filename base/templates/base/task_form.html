@@ -1,0 +1,27 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar back-track">
+    <a  href="{% url 'tasks' %}">&#8592; Trở về</a>
+</div>
+
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <!-- Tao 1 token, %% an di -->
+        <!-- {{form.as_p}} -->
+        <label style="color: #fff;" for="">Tên công việc{{ form.title.lable}}</label>
+        {{form.title}}
+        <label style="color: #fff;" for="">Mô tả công việc{{ form.description.lable}}</label>
+        {{form.description}}
+        <label style="color: #fff;" for="">Trạng thái{{ form.complete.lable}}</label>
+        {{form.complete}}
+        <br>
+        <!-- Xuong dong -->
+        <input class="button" type="submit" value="Thêm">
+    </form>
+</div>
+
+<!-- <h3>THÊM CÔNG VIỆC</h3> -->
+
+{% endblock content %}

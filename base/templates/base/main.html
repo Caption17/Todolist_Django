@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Việc cần làm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        
+        body{
+            background: linear-gradient(90deg, rgba(48, 16, 255, 1) 0%,rgba(100, 115, 255, 1) 100%);
+            background-color:#FAFAFA;
+            font-family: 'Nunito Sans', sans-serif;
+            padding-top:100px;
+            margin: 20px;
+            /* font-weight: 200; */
+        }
+
+        h1, h2, h3, h4, h5, h6{ font-family: 'Nunito Sans', sans-serif;}
+        a, p{ 
+            color: #4b5156;
+            text-decoration: none;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            width: 520px;
+            min-height: 600px;
+            background: #161a2b;
+            text-align: center;
+            margin: 10px auto;
+            border-radius: 10px;
+            padding:0 30px 30px 30px;
+
+        }
+        .header-bar {
+            font-family: 200;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            padding: 10px;
+            border-radius:5px 5px 0 0;
+            /* background: linear-gradient(90deg,rgb(77, 12, 207) 0%,rgba(155, 0, 250, 1) 100%); */
+        }
+
+        .header-bar a{
+            margin-bottom: 50px;
+            color: rgb(247, 247,247);
+        }
+
+        .logout:hover{
+            color: rgba(255, 84, 17, 1);
+            transform: scale(1.04);
+        }
+
+        .task-wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 4px auto;
+            color: #fff;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 118, 20, 1) 0%,
+                rgba(255, 84, 17, 1) 100%
+            );
+
+            padding: 16px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 90%;
+            transition: all 0.3s ease;
+        }
+        .task-wrapper:hover{
+            transform: scale(1.04);
+        }
+        .task-wrapper:nth-child(4n + 1) {
+            background: linear-gradient(
+                90deg,
+                rgba(93, 12, 255, 1) 0%,
+                rgba(155, 0, 250, 1) 100%
+            );
+        }
+
+        .task-wrapper:nth-child(4n + 2) {
+            background: linear-gradient(
+                90deg,
+                rgba(255, 12, 241, 1) 0%,
+                rgba(250, 0, 135, 1) 100%
+            );
+        }
+
+        .task-wrapper:nth-child(4n + 3) {
+            background: linear-gradient(
+                90deg,
+                rgba(20, 159, 255, 1) 0%,
+                rgba(17, 122, 255, 1) 100%
+            );
+        }
+
+        .task-title{
+            display: flex;
+        }
+        .task-title a {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-left: 10px;
+        }
+        .task-complete-icon{
+            height: 20px;
+            width: 20px;
+            background-color: rgb(105, 192,105);
+            border-radius: 50%;
+        }
+        
+        .task-incomplete-icon{
+            height: 20px;
+            width: 20px;
+            background-color: rgb(218, 218, 218);
+            border-radius: 50%;
+        }
+        .delete-link {
+            text-decoration: none;
+            font-weight: 900;
+            color: #fff;
+            font-size: 22px;
+            line-height: 0;
+            padding: 20px 0px;
+        }
+        /*  */
+        #add-link {
+            color: #EB796F;
+            text-decoration: none;
+            font-size: 42px;
+            text-shadow: 1px 1px #81413b;
+        }
+        #add-link:hover{
+            color:rgba(255, 84, 17, 1);
+            transform: scale(1.04);
+        }
+
+        #search-add-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        input[type=text],
+        input[type=password],
+        textarea {
+            border: 1px solid #757575;
+            border-radius: 5px;
+            padding: 10px;
+            width: 90%;
+        }
+
+        label {
+            padding-top: 10px !important;
+            display: block;
+        }
+
+        .button {
+            font-size: 16px;
+            padding: 16px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            outline: none;
+            background: linear-gradient(
+                90deg,
+                rgba(93, 12, 255, 1) 0%,
+                rgba(155, 0, 250, 1) 100%
+            );
+            color: #fff;
+            text-transform: capitalize;
+            transition: all 0.3s ease;
+        }
+        .button:hover{
+            /* color:rgba(255, 84, 17, 1); */
+            transform: scale(1.04);
+        }
+        .input{
+            padding: 14px 32px 14px 16px;
+            border-radius: 4px 0 0 4px;
+            /* width: 420px; */
+            background: transparent;
+            color: #333;
+        }
+        .card-body {
+            padding: 10px;
+        }
+        /* footer */
+        .footer{
+            /* display: flex; */
+            /* flex-direction: column; */
+            justify-content: space-between;
+            width: 800px;
+            height: 350px;
+            color: #fff;
+            background: #161a2b;
+            text-align: center;
+            margin: auto;
+            border-radius: 10px;
+            padding-bottom: 32px;
+        }
+        .footer h4{
+            line-height: 10px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        .footer h4:hover{
+            padding-left: 8px;
+            color: rgba(155, 0, 250, 1) ;
+        }
+        .footer h4:first-child{
+            padding-top: 40px;
+        }
+        .footer-members{
+            display: grid;
+        }
+        .footer span{
+            font-size: 18px;
+            line-height: 30px;
+            transition: all 0.3s ease;
+        }
+        .footer span:hover{
+            padding-left: 8px;
+            color: rgb(219, 121, 65) ;
+        }
+        .socials{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .socials li{
+            margin: 0 10px;
+        }
+        .socials a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .socials a i{
+            font-size: 1.1rem;
+            transition: color .4s ease;
+
+        }
+        .socials a:hover i{
+            color: aqua;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        
+        {% endblock content %}
+    </div>
+    <div class="footer">
+        <div class="footer-title">
+            <h4>HP: CÔNG NGHỆ WEB</h4>
+            <h4>NHÓM: GORILLAS</h4>
+            <h4>LỚP:</h4> 
+            <h4>THÀNH VIÊN:</h4>
+        </div>
+        <div class="footer-members">
+            <span>1. Trương Đình Anh - 4501104002</span>
+            <span>2. Huỳnh Anh Dự - 4501104041</span>
+            <span>3. Nguyễn Văn Giàu - 4501104xxx</span>
+            <span>4. Lê Thanh Thoại - 4501104227</span>
+        </div>
+        <ul class="socials">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+    </div>
+</body>
+</html>
