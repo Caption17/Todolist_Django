@@ -16,7 +16,7 @@
 
 <div id = "search-add-wrapper">
     <form action="" method="GET" style="margin-top:20px;display:flex;">
-        <input class="input" type="text" name="search-area" placeholder="Nhập vào đây" value="{{search_input}}">
+        <input class="input" type="text" name="search-area" placeholder="Nhập vào đây" value="{{search_input}}" style="color:#fff"">
         <input class="button" type="submit" value="Tìm kiếm">
     </form>
     <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
@@ -44,7 +44,7 @@
         </div>
 
     {% empty %}
-        <h3>Không có việc nào</h3>
+        <h3 style="color: #fff;">Không có việc nào</h3>
     {% endfor %}
 </div>
 
